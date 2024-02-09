@@ -41,7 +41,7 @@
 
   function handleNoClick() {
     if(labelIndex == 9){
-      isDisabledYes = true
+      isDisabledNo = true
     }
     currentImageIndex = (currentImageIndex + 1) % images.length;
     labelIndex = (labelIndex + 1) % labels.length
@@ -53,7 +53,7 @@
   }
   function handleYesClick() {
     currentImageIndex = (currentImageIndex + 10) % images.length
-    isDisabledNo = true
+    isDisabledYes = true
   }
 </script>
 
