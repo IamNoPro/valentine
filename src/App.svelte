@@ -17,7 +17,7 @@
   import Button from './lib/Button.svelte'
  
 
-  const images = [image1, image2, image3, image4, image5, image6,image7,image8,image9,image10, image11]
+  const images = [image1, image2, image3, image4, image5, image6,image7,image8,image9,image10,image10, image11]
   const labels = ['No', 'Are you sure?', 'Really sure?', 'Are you positive???', 'if you say no, I will be sad', 'I will be very very sad', 'I will be very very very sad', 'Ok fine, I will stop asking...', 'Just kidding, PLEASE SAY YES', 'PLEASEEEEEEEEE']
   let currentImageIndex = 0;
   let labelIndex = 0
@@ -52,8 +52,9 @@
     console.log(typeof buttons.no.size.toString())
   }
   function handleYesClick() {
-    currentImageIndex = (currentImageIndex + 10) % images.length
+    currentImageIndex = 11
     isDisabledYes = true
+    isDisabledNo = true
   }
 </script>
 
