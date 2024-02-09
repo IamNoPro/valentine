@@ -21,8 +21,8 @@
   const labels = ['No', 'Are you sure?', 'Really sure?', 'Are you positive???', 'if you say no, I will be sad', 'I will be very very sad', 'I will be very very very sad', 'Ok fine, I will stop asking...', 'Just kidding, PLEASE SAY YES', 'PLEASEEEEEEEEE']
   let currentImageIndex = 0;
   let labelIndex = 0
-  let isDisabled = false
-  
+  let isDisabledNo = false
+  let isDisabledYes = false
 
   // Define the initial button size and percentage change
   const initialButtonSize = 16; // Initial font size in pixels
@@ -41,7 +41,7 @@
 
   function handleNoClick() {
     if(labelIndex == 9){
-      isDisabled = true
+      isDisabledYes = true
     }
     currentImageIndex = (currentImageIndex + 1) % images.length;
     labelIndex = (labelIndex + 1) % labels.length
@@ -53,7 +53,7 @@
   }
   function handleYesClick() {
     currentImageIndex = (currentImageIndex + 10) % images.length
-    isDisabled = true
+    isDisabledNo = true
   }
 </script>
 
@@ -65,8 +65,8 @@
 
   <div class="card">
 
-    <Button text={buttons.yes.label} onClick={handleYesClick} backgroundColor="#ffe9e9" fontSize={buttons.yes.size} disabled={isDisabled}/>
-    <Button text={buttons.no.label} onClick={handleNoClick} backgroundColor="#ffe9e9" fontSize={buttons.no.size} disabled = {isDisabled}/>  
+    <Button text={buttons.yes.label} onClick={handleYesClick} backgroundColor="#ffe9e9" fontSize={buttons.yes.size} disabled={isDisabledYes}/>
+    <Button text={buttons.no.label} onClick={handleNoClick} backgroundColor="#ffe9e9" fontSize={buttons.no.size} disabled = {isDisabledNo}/>  
 
   </div>
 </div>
