@@ -40,7 +40,7 @@
   };
 
   function handleNoClick() {
-    if(labelIndex == 8){
+    if(labelIndex == 9){
       isDisabled = true
     }
     currentImageIndex = (currentImageIndex + 1) % images.length;
